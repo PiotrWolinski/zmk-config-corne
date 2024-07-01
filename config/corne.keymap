@@ -16,7 +16,7 @@
         behaviors {
                 cmt: custom_mod_tap { 
                         compatible = "zmk,behavior-hold-tap"; 
-                        label = "SPACE_LAYER_TAP"; 
+                        label = "custom_mod_tap"; 
                         #binding-cells = <2>; 
                         flavor = "tap-preferred"; 
                         tapping-term-ms = <200>; 
