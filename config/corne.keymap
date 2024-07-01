@@ -20,7 +20,7 @@
                         flavor = "tap-preferred"; 
                         tapping-term-ms = <200>; 
                         quick-tap-ms = <125>; 
-                        bindings = <&kp>; };
+                        bindings = <&kp>, <&kp>; };
         };
         keymap {
                 compatible = "zmk,keymap";
