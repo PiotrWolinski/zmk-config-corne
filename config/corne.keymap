@@ -11,7 +11,7 @@
 #define DEFAULT 0
 #define LOWER   1
 #define RAISE   2
-#define FUNC 3
+#define FUNC    3
 
 / {
         behaviors {
@@ -39,6 +39,14 @@
                         quick-tap-ms = <100>; 
                         bindings = <&kp>, <&kp>; 
                         };
+        };
+        {
+        conditional_layers {
+                compatible = "zmk,conditional-layers";
+                tri_layer {
+                if-layers = <1 2>;
+                then-layer = <3>;
+                };
         };
         keymap {
                 compatible = "zmk,keymap";
