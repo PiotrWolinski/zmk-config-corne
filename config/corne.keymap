@@ -60,7 +60,7 @@
    &ht LGUI ESC   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI    &kp BSPC
    &ht LALT TAB &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
-                  &kp LCTRL &htb LGUI TAB &lt RAISE SPACE   &lt LOWER RET &bsht LALT BSPC &lt FUNC DEL
+                  &kp LCTRL &htb LGUI TAB &lt RAISE SPACE   &lt LOWER RET &kp BSPC &lt FUNC DEL
                         >;
                 };
                 lower_layer {
