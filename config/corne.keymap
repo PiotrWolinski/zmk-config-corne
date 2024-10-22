@@ -57,7 +57,7 @@
             #binding-cells = <0>;
             bindings = <&kp LG(C)>, <&kp LG(V)>;
 
-            tapping-term-ms = <170>;
+            tapping-term-ms = <220>;
         };
     };
 
