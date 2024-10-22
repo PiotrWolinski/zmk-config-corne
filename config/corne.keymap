@@ -39,6 +39,14 @@
                         quick-tap-ms = <100>; 
                         bindings = <&kp>, <&kp>; 
                         };
+                lt_hp: layer-tap-hold-preferred {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <100>;
+                        quick-tap-ms = <0>;
+                        flavor = "hold-preferred";
+                        bindings = <&mo>, <&kp>;
+                        };
         };
         conditional_layers {
                 compatible = "zmk,conditional-layers";
@@ -61,7 +69,7 @@
    &ht LGUI ESC   &kp Q  &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI    &kp LSHIFT
    &ht LALT TAB   &kp A  &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O       &kp SQT
    &kp LSHFT      &kp Z  &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH    &kp RSHIFT
-                  &kp LCTRL &htb LGUI TAB &lt RAISE SPACE   &lt LOWER RET &kp BSPC &lt FUNC DEL
+                  &kp LCTRL &htb LGUI TAB &lt_hp RAISE SPACE   &lt_hp LOWER RET &kp BSPC &lt FUNC DEL
                         >;
                 };
                 lower_layer {
