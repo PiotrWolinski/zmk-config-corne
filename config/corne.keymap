@@ -59,28 +59,6 @@
 
             tapping-term-ms = <300>;
         };
-
-        lh_pht: left_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <6 7 8 9 10 18 19 20 21 22 7 8 9 10 19 20 21 22 31 32 33 34 30 11 23 35>;    // <---[[right-hand keys]]
-        };
-
-        rt_pht: right_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <100>;
-            quick-tap-ms = <0>;
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
-        };
     };
 
     conditional_layers {
@@ -105,10 +83,10 @@
             //                    | LCTRL | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&ht LGUI ESC  &kp Q  &kp W  &kp F      &kp P     &kp B                 &kp J             &kp L               &kp U               &kp Y                 &kp SEMI                &kp LSHIFT
-&ht LALT TAB  &kp A  &kp R  &kp S      &kp T     &kp G                 &kp M             &rt_pht LEFT_GUI N  &rt_pht LEFT_ALT E  &rt_pht LEFT_SHIFT I  &rt_pht LEFT_CONTROL O  &kp SQT
-&kp LSHFT     &kp Z  &kp X  &kp C      &kp D     &kp V                 &kp K             &kp H               &kp COMMA           &kp DOT               &kp FSLH                &kp RSHIFT
-                            &kp LCTRL  &kp LGUI  &lt_hp RAISE SPACE    &lt_hp LOWER RET  &kp BSPC            &kp DEL
+&ht LGUI ESC  &kp Q  &kp W  &kp F      &kp P     &kp B                 &kp J             &kp L     &kp U      &kp Y    &kp SEMI  &kp LSHIFT
+&ht LALT TAB  &kp A  &kp R  &kp S      &kp T     &kp G                 &kp M             &kp N     &kp E      &kp I    &kp O     &kp SQT
+&kp LSHFT     &kp Z  &kp X  &kp C      &kp D     &kp V                 &kp K             &kp H     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+                            &kp LCTRL  &kp LGUI  &lt_hp RAISE SPACE    &lt_hp LOWER RET  &kp BSPC  &kp DEL
             >;
         };
 
