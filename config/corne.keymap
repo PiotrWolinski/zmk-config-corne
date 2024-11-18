@@ -75,7 +75,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <60>;
             quick-tap-ms = <0>;
             bindings = <&kp>, <&kp>;
 
