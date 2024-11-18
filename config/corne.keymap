@@ -74,8 +74,8 @@
         rt_pht: right_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <60>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <80>;
             quick-tap-ms = <0>;
             bindings = <&kp>, <&kp>;
 
