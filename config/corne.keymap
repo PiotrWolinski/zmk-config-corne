@@ -70,6 +70,25 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        CMD {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <4 16 7 19>;
+        };
+
+        CTRL {
+            bindings = <&kp LCTRL>;
+            key-positions = <3 15 8 20>;
+        };
+
+        SHIFT {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <2 14 9 21>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
