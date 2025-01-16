@@ -73,25 +73,41 @@
     combos {
         compatible = "zmk,combos";
 
-        CMD {
+        combo_cmd_right {
             bindings = <&kp LEFT_GUI>;
-            key-positions = <4 16 7 19>;
+            key-positions = <7 19>;
             timeout-ms = <60>;
-            layers = <0 1 2>;
         };
 
-        CTRL {
+        combo_ctrl_right {
             bindings = <&kp LCTRL>;
-            key-positions = <3 15 8 20>;
+            key-positions = <8 20>;
+            timeout-ms = <60>;
+        };
+
+        combo_shift_right {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <9 21>;
+            timeout-ms = <60>;
+        };
+
+        combo_cmd_left {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <4 16>;
             timeout-ms = <60>;
             layers = <0 1 2>;
         };
 
-        SHIFT {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <2 14 9 21>;
+        combo_ctrl_left {
+            bindings = <&kp LCTRL>;
+            key-positions = <15 3>;
             timeout-ms = <60>;
-            layers = <0 1 2>;
+        };
+
+        combo_shift_left {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <2 14>;
+            timeout-ms = <60>;
         };
     };
 
