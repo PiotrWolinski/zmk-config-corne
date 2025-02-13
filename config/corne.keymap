@@ -109,6 +109,16 @@
             key-positions = <2 14>;
             timeout-ms = <60>;
         };
+
+        combo_alt_left {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <13 1>;
+        };
+
+        combo_opt_right {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <10 22>;
+        };
     };
 
     keymap {
