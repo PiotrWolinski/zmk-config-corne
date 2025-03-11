@@ -122,12 +122,22 @@
 
         hyper_left {
             bindings = <&kp LS(LA(LC(LEFT_GUI)))>;
-            key-positions = <16 28>;
+            key-positions = <4 3>;
         };
 
         hyper_right {
             bindings = <&kp LS(LA(LC(LGUI)))>;
-            key-positions = <31 19>;
+            key-positions = <7 8>;
+        };
+
+        meh_left {
+            bindings = <&kp LS(LC(LEFT_ALT))>;
+            key-positions = <38 37>;
+        };
+
+        meh_right {
+            bindings = <&kp LS(LA(LCTRL))>;
+            key-positions = <39 40>;
         };
     };
 
