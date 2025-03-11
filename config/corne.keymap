@@ -119,6 +119,16 @@
             bindings = <&kp LEFT_ALT>;
             key-positions = <10 22>;
         };
+
+        hyper_left {
+            bindings = <&kp LS(LA(LC(LEFT_GUI)))>;
+            key-positions = <16 28>;
+        };
+
+        hyper_right {
+            bindings = <&kp LS(LA(LC(LGUI)))>;
+            key-positions = <31 19>;
+        };
     };
 
     keymap {
