@@ -26,7 +26,7 @@ jobs:
             python3 -m pip install keymap-drawer
       - run: rm keymap_image.svg
         continue-on-error: true
-      - run: keymap parse -c 12 -z ~/zmk-config/config/corne.keymap > corne_keymap.yaml
+      - run: keymap parse -c 12 -z ${GITHUB_WORKSPACE}/config/corne.keymap > corne_keymap.yaml
       - run: keymap draw corne_keymap.yaml > keymap_image.svg
       - name: Check for changes
         run: git status
