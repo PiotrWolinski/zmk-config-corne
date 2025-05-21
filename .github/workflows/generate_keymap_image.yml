@@ -16,13 +16,11 @@ jobs:
   conditional_job_check_files:
     runs-on: ubuntu-latest
     # Declare outputs for next jobs
-    outputs:
-      keymap_changed: ${{ steps.check_file_changed.outputs.keymap_changed }}
     steps:
     - uses: actions/checkout@v4
       with:
         # Checkout as many commits as needed for the diff
-        fetch-depth: 1
+        fetch-depth: 2
     - shell: pwsh
       id: check_keymap_changed
       run: |
@@ -34,11 +32,11 @@ jobs:
         $HasDiff = $SourceDiff.Length -gt 0
 
         # Set the output named "keymap_changed"
-        Write-Host "::set-output name=keymap_changed::$HasDiff"
+    - run: echo "${HasDiff}" >> $GITHUB_OUTPUT
   add_keymap:
     runs-on: ubuntu-latest
     needs: [ conditional_job_check_files ]
-    if: needs.conditional_job_check_files.outputs.keymap_changed == 'True'
+    if: ${{ $GITHUB_OUTPUT }} == 'True'
     permissions:
       contents: write 
     steps:
