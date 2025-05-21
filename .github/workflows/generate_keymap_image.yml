@@ -36,7 +36,7 @@ jobs:
   add_keymap:
     runs-on: ubuntu-latest
     needs: [ conditional_job_check_files ]
-    if: ${{ $GITHUB_OUTPUT }} == 'True'
+    if: ${{ env.GITHUB_OUTPUT }} == 'True'
     permissions:
       contents: write 
     steps:
