@@ -13,8 +13,32 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
+  conditional_job_check_files:
+    runs-on: 'ubuntu-20.04'
+    # Declare outputs for next jobs
+    outputs:
+      keymap_changed: ${{ steps.check_file_changed.outputs.keymap_changed }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        # Checkout as many commits as needed for the diff
+        fetch-depth: 1
+    - shell: pwsh
+      id: check_keymap_changed
+      run: |
+        # Diff HEAD with the previous commit
+        $diff = git diff --name-only HEAD^ HEAD
+
+        # Check if a file under config/ has changed (added, modified, deleted)
+        $SourceDiff = $diff | Where-Object { $_ -match '^config/' -and $_ -match '.keymap$' }
+        $HasDiff = $SourceDiff.Length -gt 0
+
+        # Set the output named "keymap_changed"
+        Write-Host "::set-output name=keymap_changed::$HasDiff"
   add_keymap:
     runs-on: ubuntu-latest
+    needs: [ conditional_job_check_files ]
+    if: needs.conditional_job_check_files.outputs.keymap_changed == 'True'
     permissions:
       contents: write 
     steps:
@@ -32,6 +56,7 @@ jobs:
         continue-on-error: true
       - run: keymap parse -c 12 -z ${GITHUB_WORKSPACE}/config/corne.keymap > corne_keymap.yaml
       - run: keymap draw corne_keymap.yaml > keymap_image.svg
+      - run: rm corne_keymap.yaml
       - name: Check for changes
         run: git status
       - name: Stage changed files
