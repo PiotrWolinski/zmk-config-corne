@@ -24,7 +24,7 @@ jobs:
         # Checkout as many commits as needed for the diff
         fetch-depth: 2
     - id: check_keymap_changed
-      run: echo "keymap_changed=${git diff --name-only HEAD HEAD~1}" >> "$GITHUB_OUTPUT"
+      run: echo "keymap_changed=${{ git diff --name-only HEAD HEAD~1 }}" >> "$GITHUB_OUTPUT"
   add_keymap:
     runs-on: ubuntu-latest
     needs: conditional_job
