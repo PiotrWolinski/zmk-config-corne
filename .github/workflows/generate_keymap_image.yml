@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Generate keymap svg
 
 # Controls when the workflow will run
 on:
@@ -16,7 +16,7 @@ jobs:
   add_keymap:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v4
       - name: Prepare python
         uses: actions/setup-python@v5
         with:
