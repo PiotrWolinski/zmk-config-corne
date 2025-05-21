@@ -37,6 +37,6 @@ jobs:
       - name: Commit changed files
         run: git commit -m "[BOT] Generate keymap svg."
       - name: Fetch from master
-        run: git fetch origin master
+        run: git fetch origin main
       - name: Push code to main
         run: git push origin HEAD:main
