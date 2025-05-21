@@ -14,7 +14,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   conditional_job_check_files:
-    runs-on: 'ubuntu-20.04'
+    runs-on: ubuntu-latest
     # Declare outputs for next jobs
     outputs:
       keymap_changed: ${{ steps.check_file_changed.outputs.keymap_changed }}
