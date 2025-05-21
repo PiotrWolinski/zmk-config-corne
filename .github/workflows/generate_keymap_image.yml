@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  add_keymap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Prepare python
+        uses: actions/setup-python@v5
+        with:
+            python-version: 3.12
+      - name: Install keymap drawer
+        run: |
+            python3 -m pip install keymap-drawer
+      - run: rm keymap_image.svg
+      - run: keymap parse -c 12 -z ~/zmk-config/config/corne.keymap > corne_keymap.yaml
+      - run: keymap draw corne_keymap.yaml > keymap_image.svg
+      - name: Check for changes
+        run: git status
+      - name: Stage changed files
+        run: git add keymap_image.svg
+      - name: Commit changed files
+        run: git commit -m "[BOT] Generate keymap svg."
+      - name: Fetch from master
+        run: git fetch origin master
+      - name: Push code to main
+        run: git push origin HEAD:main
