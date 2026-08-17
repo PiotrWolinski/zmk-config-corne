@@ -206,7 +206,7 @@
             >;
         };
 
-        function_layer {
+        extra_layer_0 {
             status = "reserved";
         };
     };
