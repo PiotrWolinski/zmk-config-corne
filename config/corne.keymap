@@ -205,5 +205,9 @@
                                          &trans        &trans        &trans          &trans            &trans            &trans
             >;
         };
+
+        function_layer {
+            status = "reserved";
+        };
     };
 };
