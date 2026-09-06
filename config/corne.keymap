@@ -139,6 +139,20 @@
             bindings = <&kp LS(LA(LCTRL))>;
             key-positions = <39 40>;
         };
+
+        combo_cmd_ctrl_left {
+            bindings = <&kp LC(LEFT_GUI)>;
+            key-positions = <16 17>;
+            timeout-ms = <60>;
+            layers = <0 1 2>;
+        };
+
+        combo_cmd_ctrl_shft_left {
+            bindings = <&kp LC(LS(LEFT_GUI))>;
+            key-positions = <16 28>;
+            timeout-ms = <60>;
+            layers = <0 1 2>;
+        };
     };
 
     keymap {
@@ -184,10 +198,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&bootloader  &kp EXCL  &kp AT              &kp HASH             &kp DLLR                &kp PRCNT                  &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
-&studio_unlock        &trans    &kp LS(LG(L))       &kp LS(LG(S))        &copy_paste             &kp LALT                   &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans       &trans    &kp LG(LEFT_BRACE)  &kp LG(RIGHT_BRACE)  &kp LG(LA(LEFT_ARROW))  &kp LG(LA(RIGHT_ARROW))    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                           &trans               &trans                  &trans                     &trans     &trans     &trans
+&bootloader     &kp EXCL  &kp AT              &kp HASH             &kp DLLR                &kp PRCNT                  &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
+&studio_unlock  &trans    &kp LS(LG(L))       &kp LS(LG(S))        &copy_paste             &kp LALT                   &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+&trans          &trans    &kp LG(LEFT_BRACE)  &kp LG(RIGHT_BRACE)  &kp LG(LA(LEFT_ARROW))  &kp LG(LA(RIGHT_ARROW))    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+                                              &trans               &trans                  &trans                     &trans     &trans     &trans
             >;
         };
 
@@ -206,8 +220,6 @@
             >;
         };
 
-        extra_layer_0 {
-            status = "reserved";
-        };
+        extra_layer_0 { status = "reserved"; };
     };
 };
