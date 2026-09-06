@@ -369,6 +369,18 @@ path.combo {
 <tspan x="522" dy="-0.6em">Sft+Alt</tspan><tspan x="522" dy="1.2em">+LCTRL</tspan>
 </text>
 </g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="266" y="82" width="28" height="26" class="combo"/>
+<text x="280" y="94" class="combo tap">
+<tspan x="280" dy="-0.6em" style="font-size: 88%">Ctl+LEFT</tspan><tspan x="280" dy="1.2em" style="font-size: 88%">GUI</tspan>
+</text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="238" y="106" width="28" height="26" class="combo"/>
+<text x="252" y="119" class="combo tap">
+<tspan x="252" dy="-0.6em" style="font-size: 64%">Ctl+Sft+LE…</tspan><tspan x="252" dy="1.2em" style="font-size: 64%">GUI</tspan>
+</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 331)" class="layer-lower">
@@ -611,6 +623,18 @@ path.combo {
 <rect rx="6" ry="6" x="508" y="206" width="28" height="26" class="combo"/>
 <text x="522" y="219" class="combo tap">
 <tspan x="522" dy="-0.6em">Sft+Alt</tspan><tspan x="522" dy="1.2em">+LCTRL</tspan>
+</text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="266" y="82" width="28" height="26" class="combo"/>
+<text x="280" y="94" class="combo tap">
+<tspan x="280" dy="-0.6em" style="font-size: 88%">Ctl+LEFT</tspan><tspan x="280" dy="1.2em" style="font-size: 88%">GUI</tspan>
+</text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="238" y="106" width="28" height="26" class="combo"/>
+<text x="252" y="119" class="combo tap">
+<tspan x="252" dy="-0.6em" style="font-size: 64%">Ctl+Sft+LE…</tspan><tspan x="252" dy="1.2em" style="font-size: 64%">GUI</tspan>
 </text>
 </g>
 </g>
@@ -859,6 +883,18 @@ path.combo {
 <rect rx="6" ry="6" x="508" y="206" width="28" height="26" class="combo"/>
 <text x="522" y="219" class="combo tap">
 <tspan x="522" dy="-0.6em">Sft+Alt</tspan><tspan x="522" dy="1.2em">+LCTRL</tspan>
+</text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="266" y="82" width="28" height="26" class="combo"/>
+<text x="280" y="94" class="combo tap">
+<tspan x="280" dy="-0.6em" style="font-size: 88%">Ctl+LEFT</tspan><tspan x="280" dy="1.2em" style="font-size: 88%">GUI</tspan>
+</text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="238" y="106" width="28" height="26" class="combo"/>
+<text x="252" y="119" class="combo tap">
+<tspan x="252" dy="-0.6em" style="font-size: 64%">Ctl+Sft+LE…</tspan><tspan x="252" dy="1.2em" style="font-size: 64%">GUI</tspan>
 </text>
 </g>
 </g>
