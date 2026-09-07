@@ -74,7 +74,7 @@
         compatible = "zmk,combos";
 
         combo_cmd_right {
-            bindings = <&kp LEFT_GUI>;
+            bindings = <&kp LGUI>;
             key-positions = <7 19>;
             timeout-ms = <60>;
         };
@@ -86,13 +86,13 @@
         };
 
         combo_shift_right {
-            bindings = <&kp LEFT_SHIFT>;
+            bindings = <&kp LSHFT>;
             key-positions = <9 21>;
             timeout-ms = <60>;
         };
 
         combo_cmd_left {
-            bindings = <&kp LEFT_GUI>;
+            bindings = <&kp LGUI>;
             key-positions = <4 16>;
             timeout-ms = <60>;
             layers = <0 1 2>;
@@ -105,23 +105,23 @@
         };
 
         combo_shift_left {
-            bindings = <&kp LEFT_SHIFT>;
+            bindings = <&kp LSHFT>;
             key-positions = <2 14>;
             timeout-ms = <60>;
         };
 
         combo_alt_left {
-            bindings = <&kp LEFT_ALT>;
+            bindings = <&kp LALT>;
             key-positions = <13 1>;
         };
 
         combo_opt_right {
-            bindings = <&kp LEFT_ALT>;
+            bindings = <&kp LALT>;
             key-positions = <10 22>;
         };
 
         hyper_left {
-            bindings = <&kp LS(LA(LC(LEFT_GUI)))>;
+            bindings = <&kp LS(LA(LC(LGUI)))>;
             key-positions = <4 3>;
         };
 
@@ -131,7 +131,7 @@
         };
 
         meh_left {
-            bindings = <&kp LS(LC(LEFT_ALT))>;
+            bindings = <&kp LS(LC(LALT))>;
             key-positions = <38 37>;
         };
 
@@ -141,17 +141,27 @@
         };
 
         combo_cmd_ctrl_left {
-            bindings = <&kp LC(LEFT_GUI)>;
+            bindings = <&kp LC(LGUI)>;
             key-positions = <16 17>;
             timeout-ms = <60>;
             layers = <0 1 2>;
         };
 
         combo_cmd_ctrl_shft_left {
-            bindings = <&kp LC(LS(LEFT_GUI))>;
+            bindings = <&kp LC(LS(LGUI))>;
             key-positions = <16 28>;
             timeout-ms = <60>;
             layers = <0 1 2>;
+        };
+
+        tmux_leader_left {
+            bindings = <&kp LC(SPACE)>;
+            key-positions = <16 15>;
+        };
+
+        tmux_leader_right {
+            bindings = <&kp LC(SPACE)>;
+            key-positions = <19 20>;
         };
     };
 
@@ -183,10 +193,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6            &kp N7            &kp N8        &kp N9        &kp N0     &trans
-&trans  &trans  &trans  &trans  &trans  &kp LALT    &trans            &kp LEFT          &kp DOWN      &kp UP        &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp LS(LG(LBRC))  &kp LS(LG(RBRC))  &kp LG(LBRC)  &kp LG(RBRC)  &trans     &kp C_PP
-                        &trans  &trans  &trans      &trans            &trans            &trans
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6                     &kp N7    &kp N8    &kp N9  &kp N0     &trans
+&trans  &trans  &trans  &trans  &trans  &kp LALT    &kp LS(LA(LC(LG(RIGHT))))  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp LS(LA(LC(LG(LEFT))))   &trans    &trans    &trans  &trans     &kp C_PP
+                        &trans  &trans  &trans      &trans                     &trans    &trans
             >;
         };
 
@@ -198,10 +208,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&bootloader     &kp EXCL  &kp AT              &kp HASH             &kp DLLR                &kp PRCNT                  &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
-&studio_unlock  &trans    &kp LS(LG(L))       &kp LS(LG(S))        &copy_paste             &kp LALT                   &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans          &trans    &kp LG(LEFT_BRACE)  &kp LG(RIGHT_BRACE)  &kp LG(LA(LEFT_ARROW))  &kp LG(LA(RIGHT_ARROW))    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                              &trans               &trans                  &trans                     &trans     &trans     &trans
+&trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR     &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
+&trans  &trans    &trans  &trans    &copy_paste  &kp LALT     &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+&trans  &trans    &trans  &trans    &trans       &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+                          &trans    &trans       &trans       &trans     &trans     &trans
             >;
         };
 
@@ -213,10 +223,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&bootloader  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6            &kp F7            &kp F8                  &kp F9                   &kp F10    &trans
-&trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 5      &kp LEFT_ARROW    &kp DOWN                &kp UP                   &kp RIGHT  &trans
-&trans       &bt BT_CLR    &trans        &trans        &trans        &trans          &kp LS(LG(LBRC))  &kp LS(LG(RBRC))  &kp LG(LA(LEFT_ARROW))  &kp LG(LA(RIGHT_ARROW))  &trans     &kp C_PP
-                                         &trans        &trans        &trans          &trans            &trans            &trans
+&bootloader     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6            &kp F7            &kp F8                  &kp F9                   &kp F10    &trans
+&studio_unlock  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 5      &kp LEFT_ARROW    &kp DOWN                &kp UP                   &kp RIGHT  &trans
+&trans          &bt BT_CLR    &trans        &trans        &trans        &trans          &kp LS(LG(LBRC))  &kp LS(LG(RBRC))  &kp LG(LA(LEFT_ARROW))  &kp LG(LA(RIGHT_ARROW))  &trans     &kp C_PP
+                                            &trans        &trans        &trans          &trans            &trans            &trans
             >;
         };
 
