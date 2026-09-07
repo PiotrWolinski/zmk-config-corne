@@ -140,15 +140,15 @@
             key-positions = <39 40>;
         };
 
-        combo_cmd_ctrl_left {
-            bindings = <&kp LC(LGUI)>;
+        combo_alt_ctrl_left {
+            bindings = <&kp LC(LALT)>;
             key-positions = <16 17>;
             timeout-ms = <60>;
             layers = <0 1 2>;
         };
 
-        combo_cmd_ctrl_shft_left {
-            bindings = <&kp LC(LS(LGUI))>;
+        combo_alt_ctrl_shft_left {
+            bindings = <&kp LC(LS(LALT))>;
             key-positions = <16 28>;
             timeout-ms = <60>;
             layers = <0 1 2>;
@@ -208,10 +208,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR     &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
-&trans  &trans    &trans  &trans    &copy_paste  &kp LALT     &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &trans    &trans  &trans    &trans       &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                          &trans    &trans       &trans       &trans     &trans     &trans
+&trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR       &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
+&trans  &trans    &trans  &trans    &kp LC(LA(A))  &kp LALT     &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+&trans  &trans    &trans  &trans    &kp LA(LC(Z))  &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+                          &trans    &trans         &trans       &trans     &trans     &trans
             >;
         };
 
