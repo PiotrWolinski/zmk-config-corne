@@ -36,7 +36,12 @@ jobs:
       - name: Stage changed files
         run: git add keymap_image.svg
       - name: Commit changed files
-        run: git commit -m "[BOT] Generate keymap svg."
+        run: |
+          if git diff --cached --quiet; then
+            echo "No keymap image changes to commit."
+          else
+            git commit -m "[BOT] Generate keymap svg."
+          fi
       - name: Fetch from master
         run: git fetch origin main
       - name: Push code to main
